@@ -246,8 +246,8 @@ class JMDictionary(object):
                 #is word in list, if not, add it
                 word = word_node.text
                 if self.word_to_entries.has_key(word) != True:
-                    self.word_to_entries[word] = set()
-                self.word_to_entries[word].add(Entry(entry))
+                    self.word_to_entries[word] = []
+                self.word_to_entries[word].append(Entry(entry))
 
     def lookup(self, word):
         return self.word_to_entries.get(word, [])
